@@ -35,8 +35,9 @@ define(['jquery','waypoints','mejs'], function ($) {
         mediaElement.play();
 
         setTimeout(function() {
-          mediaElement.setCurrentTime(0);
-        }, 10000);
+          $('.mejs-container').remove();
+          img.show();
+        }, 8000);
       }
     });
   });

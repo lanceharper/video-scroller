@@ -30,4 +30,5 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 // Custom Styles
 @import "views";
 
+.mejs-container .mejs-controls { visibility:hidden !important; }
 
