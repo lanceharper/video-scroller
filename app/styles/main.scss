@@ -4,8 +4,15 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 @import 'sass-bootstrap/lib/bootstrap';
 
 .hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
+  margin: 50px auto 0 auto;
+  width: 1000px;
 }
+
+.hero-unit img {
+
+  width:800px;
+  height:450px;
+}
+
 
 //.mejs-container .mejs-controls { visibility:hidden !important; }

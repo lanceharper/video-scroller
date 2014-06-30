@@ -28,7 +28,7 @@ define(['jquery','waypoints','mejs'], function ($) {
     meContainer.remove();
     var img = $(this).find('img').hide();
 
-    img.after('<video id="activePlayer" src="' + img.data('video-src') + '" width="320" height="240"></video>')
+    img.after('<video id="activePlayer" src="' + img.data('video-src') + '" width="800" height="450"></video>')
 
     player = new MediaElementPlayer('#activePlayer', {
       success: function(mediaElement, domObject) {
