@@ -1,7 +1,6 @@
 /*global define */
 define(['jquery','waypoints','mejs'], function ($) {
   'use strict';
-
   $('.hero-unit').waypoint(function(direction) {
 
     if ($(this).find('#activePlayer').length > 0) {
@@ -25,11 +24,11 @@ define(['jquery','waypoints','mejs'], function ($) {
           .find('.mejs-container');
     }
 
-    meContainer.replaceWith('<img src="images/echo-hereweare.jpg"/>');
+    meContainer.prev('img').show();
+    meContainer.remove();
+    var img = $(this).find('img').hide();
 
-    $(this)
-      .find('img')
-      .replaceWith('<video id="activePlayer" src="images/echo-hereweare.mp4" width="320" height="240"></video>')
+    img.after('<video id="activePlayer" src="' + img.data('video-src') + '" width="320" height="240"></video>')
 
     player = new MediaElementPlayer('#activePlayer', {
       success: function(mediaElement, domObject) {
