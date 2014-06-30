@@ -76,6 +76,10 @@ header {
 
 	min-width: 360px;
 	@include flex(0 1 auto);
+
+	@media (max-width: 900px) {
+		display: none;
+	}
 }
 .video-content {
 	@include flex(3 1 auto);
@@ -83,10 +87,26 @@ header {
 
 
 .video-sidebar {
-	ul {list-style: none;}
+	a:link, a:visited {color: $dark-secondary;}
+
+	h2 {font-weight: 600;}
+
+	ul {list-style: none; overflow: auto;}
 
 	li {
+		margin: .5em 0 0;
+		text-transform: uppercase;
+
 		img {max-width: 300px;}
+	}
+
+	.img-wrap {display: block; max-height: 180px; overflow: hidden;}
+
+	.section-list  {
+		float: left;
+		margin-top: .5em;
+
+		&.first {margin-right: 30px;}
 	}
 }
 
@@ -95,8 +115,13 @@ header {
 
 }
 
-.trending-list {
-	li {margin-bottom: 2em;}
+.trending-list li {
+	text-transform: none;
+	margin-bottom: 2em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .video-unit {
@@ -108,7 +133,8 @@ header {
 	justify-content: space-between;
 	margin: .5em 0;
 
-	.timestamp {
-		color: $blue-medium;
+	.publishtime {
+		color: $blue-light;
+		font-size: .8em;
 	}
 }
