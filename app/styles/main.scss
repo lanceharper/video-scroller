@@ -1,18 +1,33 @@
+@charset "UTF-8";
+
 $iconSpritePath: "../images/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
+// Some dependencies
+@import "utils";
+@import "icons";
+
+// Bootstrap styles (Partial import)
 @import 'sass-bootstrap/lib/bootstrap';
+@import "sass-bootstrap/lib/variables";
+@import "sass-bootstrap/lib/mixins";
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 1000px;
-}
+// Grid system and page structure
+@import "sass-bootstrap/lib/scaffolding";
+@import "sass-bootstrap/lib/grid";
+@import "sass-bootstrap/lib/layouts";
 
-.hero-unit img {
+// CSS Reset
+@import "sass-bootstrap/lib/reset";
 
-  width:800px;
-  height:450px;
-}
+// Components: Misc
+@import "sass-bootstrap/lib/thumbnails";
+@import "sass-bootstrap/lib/media";
+@import "sass-bootstrap/lib/hero-unit";
+@import "sass-bootstrap/lib/utilities";
 
 
-//.mejs-container .mejs-controls { visibility:hidden !important; }
+// Custom Styles
+@import "views";
+
+

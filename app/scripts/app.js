@@ -1,7 +1,7 @@
 /*global define */
 define(['jquery','waypoints','mejs'], function ($) {
   'use strict';
-  $('.hero-unit').waypoint(function(direction) {
+  $('.video-unit').waypoint(function(direction) {
 
     if ($(this).find('#activePlayer').length > 0) {
       return;
