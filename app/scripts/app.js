@@ -7,7 +7,7 @@ define(['jquery','waypoints','mejs'], function ($) {
 
   $('.video-unit').waypoint(function(direction) {
 
-    $('.video-sidebar').addClass('sidebar-fixed');
+    $('.video-main').addClass('sidebar-fixed');
     if ($(this).find('#activePlayer').length > 0) {
       return;
     }
