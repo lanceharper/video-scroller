@@ -130,7 +130,7 @@ header {
 }
 
 .video-unit {
-	margin: 0 0 4em;
+	margin: 0 0 6em;
 
 	// size of video player
 	max-width: 800px;
@@ -153,9 +153,8 @@ header {
 	}
 	.video-sidebar {
 		position: fixed;
-		left: 6%;
 		top: 60px;
 
-		width: 33%;
+		li {font-size: .8em;}
 	}
 }
