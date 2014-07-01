@@ -16,6 +16,8 @@ var idToPlaylistMap = {
 
 app.engine('html', swig.renderFile);
 
+app.set('view cache', false);
+swig.setDefaults({ cache: false });
 app.set('view engine', 'html');
 app.set('views', __dirname + '/app');
 app.use('/bower_components',  express.static(__dirname + '/app/bower_components'));
