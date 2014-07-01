@@ -1,14 +1,22 @@
 /*global define */
 define(['jquery','waypoints','mejs'], function ($) {
   'use strict';
+
+  var player = null;
+  var timeoutId = null;
+
   $('.hero-unit').waypoint(function(direction) {
 
     if ($(this).find('#activePlayer').length > 0) {
       return;
     }
 
+
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
     $('#activePlayer').remove();
-    var player = null;
 
     if (direction === 'down') {
 
@@ -24,6 +32,7 @@ define(['jquery','waypoints','mejs'], function ($) {
           .find('.mejs-container');
     }
 
+
     meContainer.prev('img').show();
     meContainer.remove();
     var img = $(this).find('img').hide();
@@ -33,11 +42,11 @@ define(['jquery','waypoints','mejs'], function ($) {
     player = new MediaElementPlayer('#activePlayer', {
       success: function(mediaElement, domObject) {
         mediaElement.play();
-
-        setTimeout(function() {
-          img.show();
-          $('.mejs-container').remove();
-        }, 8000);
+        //
+        // timeoutId = setTimeout(function() {
+        //   img.show();
+        //   $('.mejs-container').remove();
+        // }, 8000);
       }
     });
   });

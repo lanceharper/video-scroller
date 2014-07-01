@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>{{playlistName}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -18,26 +18,13 @@
     </head>
     <body>
         <div class="container">
+            <h1>{{playlistName}}</h1>
+            {% for video in videos %}
             <div class="hero-unit">
-              <h1>video 1</h1>
-              <img data-video-src="http://msnbc.vo.llnwd.net/l1/video/h264/std/p_30stk_cat_images_140627.mp4" src="http://media2.s-nbcnews.com/i/MSNBC/Components/Video/__NEW/p_30stk_cat_images_140627.jpg"/>
+              <h1>{{video.title}}</h1>
+              <img data-video-src="{{video.video_src}}" src="{{video.aims_src}}"/>
             </div>
-            <div class="hero-unit">
-                <h1>video 2</h1>
-                <img data-video-src="http://msnbc.vo.llnwd.net/l1/video/h264/std/p_30stk_3d_phone_140619.mp4" src="http://media2.s-nbcnews.com/i/MSNBC/Components/Video/__NEW/p_30stk_3dphone_140619.JPG"/>
-            </div>
-            <div class="hero-unit">
-                <h1>video 3a</h1>
-                <img data-video-src="http://msnbc.vo.llnwd.net/l1/video/h264/std/p_30stk_bitcoins3_140613.mp4" src="http://media2.s-nbcnews.com/i/MSNBC/Components/Video/__NEW/p_30stk_bitcoin_mining_140613.jpg"/>
-            </div>
-            <div class="hero-unit">
-                <h1>video 4</h1>
-                <img data-video-src="http://msnbc.vo.llnwd.net/l1/video/h264/std/p_30stk_supreme_court_140612.mp4" src="http://media2.s-nbcnews.com/i/MSNBC/Components/Video/__NEW/p_30stk_supreme_court_140612.jpg"/>
-            </div>
-            <div class="hero-unit">
-                <h1>video 5</h1>
-                <img data-video-src="http://msnbc.vo.llnwd.net/l1/video/h264/std/p_30stk_redditama_140603.mp4" src="http://media2.s-nbcnews.com/i/MSNBC/Components/Video/__NEW/p_30stk_redditama_140606.jpg"/>
-            </div>
+            {% endfor %}
         </div>
 
         <!--[if lt IE 7]>
