@@ -5,7 +5,7 @@ define(['jquery','waypoints','mejs'], function ($) {
   var player = null;
   var timeoutId = null;
 
-  $('.hero-unit').waypoint(function(direction) {
+  $('.video-unit').waypoint(function(direction) {
 
     if ($(this).find('#activePlayer').length > 0) {
       return;
