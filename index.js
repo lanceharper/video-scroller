@@ -7,6 +7,7 @@ var app = express();
 var demoUrl = 'http://feed.theplatform.com/f/2E2eJC/nnd_53296819?form=MPXNBCNewsAPI&pretty=true&range=-40&adapterParams=widget%3Dvideo-pos';
 
 var idToPlaylistMap = {
+    '30-seconds-to-know': 'http://feed.theplatform.com/f/2E2eJC/nnd_53296819?form=MPXNBCNewsAPI&pretty=true&range=-40&adapterParams=widget%3Dvideo-pos',
     'us-news': 'http://feed.theplatform.com/f/2E2eJC/nnd_21426262?form=MPXNBCNewsAPI&adapterParams=widget%3Dvideo-pos',
     'meet-the-press': 'http://feed.theplatform.com/f/2E2eJC/nnd_18424744?form=MPXNBCNewsAPI&adapterParams=widget%3Dvideo-pos',
     'supreme-court': 'http://feed.theplatform.com/f/2E2eJC/nnd_21427732?form=MPXNBCNewsAPI&adapterParams=widget%3Dvideo-pos',
@@ -22,9 +23,9 @@ app.use('/scripts',  express.static(__dirname + '/app/scripts'));
 app.use('/images',  express.static(__dirname + '/app/images'));
 app.use('/styles',  express.static(__dirname + '/.tmp/styles'));
 
-app.get('/', function (req, res) {
+app.get('/:id', function (req, res) {
 
-  request(demoUrl).spread(function(result, body) {
+  request(idToPlaylistMap[req.params.id]).spread(function(result, body) {
     var body = JSON.parse(body);
 
     body.videos = body.videos.map(function(video) {
