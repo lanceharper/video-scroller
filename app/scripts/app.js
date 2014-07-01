@@ -49,7 +49,7 @@ define(['jquery','waypoints','mejs'], function ($) {
         // }, 8000);
       }
     });
-  });
+  }, {offset: 100});
 
   return;
 });

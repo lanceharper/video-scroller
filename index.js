@@ -19,6 +19,7 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/app');
 app.use('/bower_components',  express.static(__dirname + '/app/bower_components'));
 app.use('/scripts',  express.static(__dirname + '/app/scripts'));
+app.use('/images',  express.static(__dirname + '/app/images'));
 app.use('/styles',  express.static(__dirname + '/.tmp/styles'));
 
 app.get('/', function (req, res) {
