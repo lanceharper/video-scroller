@@ -112,7 +112,6 @@ header {
 
 .video-content {
 	margin-top: 1.5em;
-
 }
 
 .trending-list li {
@@ -136,5 +135,28 @@ header {
 	.publishtime {
 		color: $blue-light;
 		font-size: .8em;
+	}
+}
+
+.video-actions {
+	position: absolute;
+	bottom: 287px;
+	width: 100%;
+	background: rgba(0,0,0, .025);
+	height: 100px;
+
+	a:link, a:visited {
+
+	}
+}
+
+.sidebar-fixed {
+	.video-content {
+		padding-left: 400px;
+	}
+	.video-sidebar {
+		position: fixed;
+		left: 30px;
+		top: 150px;
 	}
 }
