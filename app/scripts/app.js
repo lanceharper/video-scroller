@@ -5,9 +5,13 @@ define(['jquery','waypoints','mejs'], function ($) {
   var player = null;
   var timeoutId = null;
 
+  $('.video-main').waypoint(function() {
+    $('.video-main').toggleClass('sidebar-fixed');
+  });
+
   $('.video-unit').waypoint(function(direction) {
 
-    $('.video-main').addClass('sidebar-fixed');
+
     if ($(this).find('#activePlayer').length > 0) {
       return;
     }
