@@ -70,6 +70,8 @@ header {
 .video-main {
 	@include flexbox();
 	justify-content: space-around;
+
+	position: relative;
 }
 .video-sidebar {
 	padding-right: 30px;
@@ -121,10 +123,17 @@ header {
 	&:last-child {
 		margin-bottom: 0;
 	}
+
+	position: relative;
+
+	i {position: absolute; left: 20px; bottom: 20px;}
 }
 
 .video-unit {
 	margin: 0 0 4em;
+
+	// size of video player
+	max-width: 800px;
 }
 
 .video-meta {
@@ -138,25 +147,15 @@ header {
 	}
 }
 
-.video-actions {
-	position: absolute;
-	bottom: 287px;
-	width: 100%;
-	background: rgba(0,0,0, .025);
-	height: 100px;
-
-	a:link, a:visited {
-
-	}
-}
-
 .sidebar-fixed {
 	.video-content {
-		padding-left: 400px;
+		padding-left: 26%;
 	}
 	.video-sidebar {
 		position: fixed;
-		left: 30px;
-		top: 150px;
+		left: 6%;
+		top: 60px;
+
+		width: 33%;
 	}
 }
